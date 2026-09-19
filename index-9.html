@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trade With Munaaf</title>
+<meta name="description" content="Trade With Munaaf - Stock market education, live market analysis and trading community.">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:#fff;
+  background:#07080d;
+  min-height:100vh;
+}
+.page{
+  width:100%;
+  max-width:760px;
+  margin:auto;
+  padding:16px 14px 35px;
+  background:
+    radial-gradient(circle at 50% 5%,rgba(0,91,255,.45),transparent 35%),
+    radial-gradient(circle at 75% 30%,rgba(0,255,200,.20),transparent 30%),
+    linear-gradient(180deg,#101a43 0%,#101631 28%,#080a11 70%);
+  min-height:100vh;
+  overflow:hidden;
+}
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+.pill{
+  background:rgba(90,125,255,.22);
+  border:1px solid rgba(130,160,255,.28);
+  border-radius:30px;
+  padding:8px 15px;
+  font-weight:700;
+  font-size:13px;
+  letter-spacing:.7px;
+}
+.trusted{
+  font-size:14px;
+  color:#dfffea;
+  font-weight:700;
+}
+.trusted span{color:#61e6a2}
+.hero{
+  text-align:center;
+  border-radius:0 0 38px 38px;
+  padding:12px 18px 30px;
+}
+.dp{
+  width:124px;
+  height:124px;
+  object-fit:cover;
+  border-radius:50%;
+  border:4px solid #00d9ff;
+  padding:3px;
+  background:#0d1222;
+  box-shadow:0 0 28px rgba(0,217,255,.55);
+  display:block;
+  margin:0 auto 18px;
+}
+h1{
+  font-size:clamp(34px,8vw,58px);
+  line-height:1.05;
+  letter-spacing:.5px;
+  text-shadow:0 2px 10px rgba(0,0,0,.35);
+}
+.subtitle{
+  margin-top:10px;
+  color:#36d9ff;
+  font-size:17px;
+  font-weight:800;
+  letter-spacing:2px;
+}
+.tagline{
+  margin:18px auto 0;
+  max-width:620px;
+  font-size:18px;
+  font-weight:700;
+  line-height:1.45;
+}
+.tagline .yellow{color:#ffd42a}
+.cta{
+  display:block;
+  margin:28px auto 0;
+  max-width:650px;
+  text-decoration:none;
+  color:#fff;
+  font-size:21px;
+  font-weight:800;
+  padding:19px 18px;
+  border-radius:55px;
+  background:linear-gradient(90deg,#ff7b1a,#ffbd32);
+  box-shadow:0 8px 30px rgba(255,139,25,.35);
+  transition:.2s;
+}
+.cta:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.cta small{
+  display:block;
+  font-size:13px;
+  font-weight:500;
+  margin-top:3px;
+}
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:22px;
+}
+.stat,.feature{
+  background:rgba(28,32,48,.72);
+  border:1px solid rgba(255,255,255,.13);
+  box-shadow:inset 0 0 22px rgba(255,255,255,.025);
+  backdrop-filter:blur(10px);
+}
+.stat{
+  min-height:110px;
+  border-radius:20px;
+  padding:17px 8px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+.stat strong{
+  color:#ffad17;
+  font-size:28px;
+  line-height:1;
+}
+.stat:nth-child(2) strong{color:#e7f3ff;font-size:30px}
+.stat:nth-child(3) strong{color:#ffad17}
+.stat span{
+  margin-top:8px;
+  color:#dce4ef;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.4px;
+}
+.features{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:20px;
+}
+.feature{
+  min-height:88px;
+  border-radius:18px;
+  padding:15px 14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+}
+.feature .name{
+  font-size:15px;
+  font-weight:800;
+  line-height:1.25;
+}
+.badge{
+  flex:none;
+  font-size:11px;
+  font-weight:900;
+  padding:7px 10px;
+  border-radius:10px;
+  background:#ffb300;
+  color:#1a1200;
+}
+.feature:nth-child(2) .badge{background:#ff1744;color:#fff}
+.feature:nth-child(3) .badge{background:#8c43ff;color:#fff}
+.feature:nth-child(4) .badge{background:#00e676;color:#002a14}
+.offer{
+  margin-top:20px;
+  padding:25px 20px;
+  border-radius:24px;
+  background:rgba(22,27,40,.82);
+  border:1px solid rgba(255,255,255,.11);
+}
+.offer-title{
+  text-align:center;
+  color:#55a9ff;
+  font-weight:900;
+  letter-spacing:3px;
+  font-size:14px;
+  margin-bottom:18px;
+}
+.offer-list{
+  display:grid;
+  gap:12px;
+}
+.offer-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:13px 12px;
+  border-radius:13px;
+  background:rgba(255,255,255,.035);
+}
+.offer-item .ico{font-size:23px}
+.offer-item b{font-size:15px}
+.offer-item span{margin-left:auto;color:#ffb52a;font-size:11px;font-weight:900}
+.note{
+  text-align:center;
+  color:#7e8798;
+  font-size:11px;
+  line-height:1.5;
+  margin:22px 8px 0;
+}
+footer{
+  text-align:center;
+  color:#646d7c;
+  font-size:11px;
+  padding-top:20px;
+}
+@media(max-width:520px){
+  .page{padding-left:11px;padding-right:11px}
+  .stats{gap:8px}
+  .stat{min-height:96px}
+  .stat strong{font-size:25px}
+  .stat span{font-size:11px}
+  .feature .name{font-size:13px}
+  .badge{font-size:9px;padding:6px 7px}
+}
+@media(max-width:360px){
+  .features{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+  <div class="top">
+    <div class="pill">• STOCK MARKET</div>
+    <div class="trusted">🛡 <span>Trusted</span></div>
+  </div>
+
+  <section class="hero">
+    <!-- Replace munaaf-dp.jpg with Munaaf's actual photo -->
+    <img class="dp" src="munaaf-dp.jpg" alt="Trade With Munaaf">
+
+    <h1>TRADE WITH MUNAAF</h1>
+    <div class="subtitle">✦ STOCK MARKET ✦</div>
+
+    <div class="tagline">
+      📈 <span class="yellow">Expert insights &amp; market learning</span> —
+      trade smarter with better understanding.
+    </div>
+
+    <a class="cta" href="https://t.me/+__5DYhjPhtMyYjhl" target="_blank" rel="noopener">
+      📲 Join Telegram Channel
+      <small>Get free market tips &amp; trading education</small>
+    </a>
+  </section>
+
+  <section class="stats">
+    <div class="stat">
+      <strong>📊</strong>
+      <span>MARKET<br>ANALYSIS</span>
+    </div>
+    <div class="stat">
+      <strong>📈</strong>
+      <span>LIVE<br>CALLS</span>
+    </div>
+    <div class="stat">
+      <strong>24/7</strong>
+      <span>COMMUNITY<br>SUPPORT</span>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <div class="name">📊 Nifty &amp;<br>BankNifty</div>
+      <div class="badge">LIVE</div>
+    </div>
+
+    <div class="feature">
+      <div class="name">🎯 Entry · SL ·<br>Target</div>
+      <div class="badge">CORE</div>
+    </div>
+
+    <div class="feature">
+      <div class="name">📈 Option Chain<br>Analysis</div>
+      <div class="badge">PRO</div>
+    </div>
+
+    <div class="feature">
+      <div class="name">🛡 Risk<br>Management</div>
+      <div class="badge">SAFE</div>
+    </div>
+  </section>
+
+  <section class="offer">
+    <div class="offer-title">🏛 WHAT WE OFFER</div>
+
+    <div class="offer-list">
+      <div class="offer-item">
+        <div class="ico">📊</div>
+        <b>Live Market Analysis</b>
+        <span>LIVE</span>
+      </div>
+
+      <div class="offer-item">
+        <div class="ico">🎯</div>
+        <b>Trading Setups &amp; Learning</b>
+        <span>LEARN</span>
+      </div>
+
+      <div class="offer-item">
+        <div class="ico">📈</div>
+        <b>Option Chain Insights</b>
+        <span>PRO</span>
+      </div>
+
+      <div class="offer-item">
+        <div class="ico">🛡️</div>
+        <b>Risk Management Education</b>
+        <span>SAFE</span>
+      </div>
+    </div>
+  </section>
+
+  <a class="cta" href="https://t.me/+__5DYhjPhtMyYjhl" target="_blank" rel="noopener">
+    🚀 JOIN TRADE WITH MUNAAF
+    <small>Tap here to join the Telegram community</small>
+  </a>
+
+  <div class="note">
+    Disclaimer: Trading and investing involve risk. All information is for
+    educational purposes only and is not a guarantee of profit or financial advice.
+  </div>
+
+  <footer>© 2026 Trade With Munaaf</footer>
+
+</div>
+</body>
+</html>
